@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #ff5733;
+  --color-tom: #808000;
+}
+
+/* .button {
+  @apply bg-brand text-white p-4 rounded;
+} */
+
+
+body{
+   font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.container{
+    width: 90%;
+}
+
+.link:hover{color: rgb(1, 1, 13)}
