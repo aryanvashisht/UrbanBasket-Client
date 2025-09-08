@@ -1,13 +1,11 @@
-import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import { useEffect, useState } from 'react';
-import ProductsSlider from '../Products/ProductsSlider';
-// Tabs at Home
 
+// Tabs at Home
 function HomeNavigation() {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState("TodaysDeal");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -32,7 +30,7 @@ function HomeNavigation() {
           value={value} 
           onChange={handleChange} 
           aria-label="Popular Products tab">
-            <Tab label="Today's deals" value="TodaysDeal" />
+            <Tab label="Today's deals" value={"TodaysDeal"} />
             <Tab label="Men" value={"Men"}/>
             <Tab label="Women" value={"Women"}/>
             <Tab label="Watches" value={"Watches"}/>

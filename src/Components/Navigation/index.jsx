@@ -12,11 +12,10 @@ function Navigation() {
     const toggleDrawer = (newOpen) =>()=> {
         setOpen(newOpen);
         console.log("click");
-        
     };
 
     return (
-        <div className='bg-purple-300 flex justify-between py-2'>
+        <div className='bg-gray-900 border rounded border-gray-500 flex justify-between py-2'>
             <div className='flex justify-center w-[30%]'>
                 <Button 
                 onClick={toggleDrawer(true)}
@@ -24,14 +23,14 @@ function Navigation() {
                     SHOP BY CATEGORIES<FaAngleDown className="text-2xl mx-2.5"/></Button>
             </div>
 
-            <div className="flex justify-center w-[45%] mt-1.5">
-                <Button className="text-xl link transition">Home</Button>&nbsp;|&nbsp;
-                <Button className="text-xl link transition">Fashion</Button>&nbsp;|&nbsp;
-                <Button className="text-xl link transition">Electronics</Button>&nbsp;|&nbsp;
-                <Button className="text-xl link transition">Watches</Button>&nbsp;|&nbsp;
-                <Button className="text-xl link transition">Footwear</Button>&nbsp;|&nbsp;
-                <Button className="text-xl link transition">Groceries</Button>&nbsp;|&nbsp;
-                <Button className="text-xl link transition">Accessories</Button>&nbsp;|&nbsp;
+            <div className="flex justify-center w-[45%] mt-1.5 content-center">
+                <Button className="text-xl link transition"><Link to={"/"}>Home</Link>&nbsp;|&nbsp;</Button>
+                <Button className="text-xl link transition"><Link to={"/Category?name=Fashion"}>Fashion</Link>&nbsp;|&nbsp;</Button>
+                <Button className="text-xl link transition"><Link to={"/Category?name=Electronics"}>Electronics</Link>&nbsp;|&nbsp;</Button>
+                <Button className="text-xl link transition"><Link to={"/Category?name=Watches"}>Watches</Link>&nbsp;|&nbsp;</Button>
+                <Button className="text-xl link transition"><Link to={"/Category?name=Footwear"}>Footwear</Link>&nbsp;|&nbsp;</Button>
+                <Button className="text-xl link transition"><Link to={"/Category?name=Groceries"}>Groceries</Link>&nbsp;|&nbsp;</Button>
+                <Button className="text-xl link transition"><Link to={"/Category?name=Accessories"}>Accessories</Link>&nbsp;|&nbsp;</Button>
             </div>
 
             <div className="flex justify-center  mt-2 w-[25%] cursor-default">

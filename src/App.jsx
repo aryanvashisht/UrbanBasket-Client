@@ -2,31 +2,49 @@ import './App.css'
 import Header from './Components/Header/Header'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './Components/Pages/Home/Home'
-import AdsBannerSlider from './Components/AdsBannerSlider/AdsBannerSlider'
-import HomeNavigation from './Components/HomeNavigation/HomeNavigation'
-import ProductsSlider from './Components/Products/ProductsSlider'
 import Footer from './Components/Footer/Footer'
-import FeaturedProducts from './Components/FeaturedProducts/FeaturedProducts'
-import DiscountSlider from './Components/DiscountSection/DiscountSlider'
+import ProductExpanded from './Components/Product/ProductExpanded'
+import Login from './Components/Pages/Login/Login'
+import SignUp from './Components/Pages/SignUp/SignUp'
+import Layout from './Components/Layout/Layout'
+import ProductByCategory from './Components/Pages/ProductByCategory/ProductByCategory'
 import LatestProducts from './Components/LatestProd/LatestProducts'
-import ProductBrief from './Components/Product/ProductBrief'
-import ProductList from './Components/ProductList/ProductList'
-import FeaturedSlider from './Components/FeaturedProducts/Slider/FeaturedSlider'
-import Sidebar from './Components/Sidebar/Sidebar'
+import { store } from './app/store'
+import { Provider } from 'react-redux'
+import CheckOut from './Components/Pages/CheckOut/CheckOut'
+import Orders from './Components/Pages/Orders/Orders'
+import AddProduct from './Components/Admin/AdminPages/AddProduct'
+import AllProducts from './Components/Admin/AdminPages/AllProducts'
+import AllOrders from './Components/Admin/AdminPages/AllOrders'
+import EditOrderStatus from './Components/Admin/AdminPages/AllOrders'
 
 function App() {
 
   return (
     <>
+    <Provider store={store}>
       <BrowserRouter>
-
-    <Header />
       <Routes>
-        <Route path='/Home' element={<Home />}/>
-        <Route path='/new' element={<Sidebar />}/>
+        <Route element={<Layout/>}>
+        <Route path='' element={<Home />}/>
+        <Route path='/category' element={<ProductByCategory />}/>
+        <Route path='/help-center' element={<LatestProducts />}/>
+        <Route path='/order-details' element={<Orders />}/>
+        <Route path='/product/:id' element={<ProductExpanded />}/> 
+        <Route path='/Check-Out' element={<CheckOut />}/> 
+        <Route path='/Payment' element={<Orders />}/> 
+        </Route>
+
+        <Route path='/Login' element={<Login />}/>
+        <Route path='/SignUp' element={<SignUp />}/>
+
+        <Route path='/Admin/addproduct' element={<AddProduct />}/>
+        <Route path='/Admin/allproducts' element={<AllProducts />}/>
+        <Route path='/Admin/allorders' element={<AllOrders />}/>
         </Routes>
-        <Footer/>
+        
       </BrowserRouter>
+      </Provider>
     </>
   )
 }

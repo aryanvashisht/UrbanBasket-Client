@@ -4,82 +4,41 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { Link } from 'react-router-dom';
-import Rating from '@mui/material/Rating';
-import Box from '@mui/material/Box';
-import { useState } from 'react';
-
-const imagePaths = [
-  "pexels-akos-szabo-145938-440731.jpg",
-  "pexels-bri-schneiter-28802-346529.jpg",
-  "pexels-pripicart-620337.jpg",
-  "pexels-akos-szabo-145938-440731.jpg",
-  "pexels-bri-schneiter-28802-346529.jpg",
-  "pexels-pripicart-620337.jpg",
-  "pexels-akos-szabo-145938-440731.jpg",
-  "pexels-bri-schneiter-28802-346529.jpg",
-  "pexels-pripicart-620337.jpg",
-  "pexels-bri-schneiter-28802-346529.jpg",
-  "pexels-pripicart-620337.jpg",
-  "pexels-akos-szabo-145938-440731.jpg",
-  "pexels-bri-schneiter-28802-346529.jpg",
-  "pexels-pripicart-620337.jpg",
-  "pexels-akos-szabo-145938-440731.jpg",
-  "pexels-bri-schneiter-28802-346529.jpg",
-  "pexels-pripicart-620337.jpg",
-  "pexels-bri-schneiter-28802-346529.jpg",
-  "pexels-pripicart-620337.jpg",
-  "pexels-akos-szabo-145938-440731.jpg",
-  "pexels-bri-schneiter-28802-346529.jpg",
-  "pexels-pripicart-620337.jpg",
-  "pexels-akos-szabo-145938-440731.jpg",
-  "pexels-bri-schneiter-28802-346529.jpg",
-  "pexels-pripicart-620337.jpg"
-];
+import { useNavigate } from 'react-router-dom';
+import ProductBrief from '../Product/ProductBrief';
+import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 
 const ProductsSlider = () => {
-    const [value,setValue]=useState(4);
+  const navigate = useNavigate();
+  const [activeCartId, setActiveCartId] = useState();
+  const [category, setCategory] = useState();
+  const productState = useSelector((state) => state.Products);
+  const user = useSelector((state) => state.userOperations);
+
+  useEffect(()=>{
+    console.log(productState.products[0]?.Id)
+console.log(user);
+  },[productState,user]  )
+
   return (
     <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-      spaceBetween={5}
-      slidesPerView={10}
+      spaceBetween={2}
+      slidesPerView={5.5}
       navigation
       autoplay={{
         delay: 2500,
-        disableOnInteraction: false,
+        disableOnInteraction: true,
+        pauseOnMouseEnter: true
       }}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
-      className="w-[99%] mx-3 mb-3 mt-2"
+      className="w-[99%]"
     >
-      {imagePaths.map((src, index) => (
-        <SwiperSlide key={index} className="border border-white rounded">
-           <Link
-            to={`/product/${index + 1}`} // Dynamic route for each product
-            className="p-0 flex flex-col w-full bg-transparent text-white"
-          >
-            <img
-              src={src}
-              alt={`Slide ${index + 1}`}
-              className="w-full h-50 object-cover rounded-t"
-            />
-            <div className="p-1 text-lg text-center bg-black bg-opacity-60 w-full rounded-b">
-              Product {index + 1}
-            </div>
-            <div className="p-1 text-md bg-black bg-opacity-60 w-full rounded-b">
-              Price  ₹{index*100 - 1}
-            </div>
-            <div className="p-1 text-md bg-black bg-opacity-60 w-full rounded-b">
-              Discount {index + 1}
-            </div>
-            <Box sx={{ '& > legend': { mt: 2 } }}>
-
-      <Rating className="ml-3 mt-1 mb-2" name="read-only" value={value} readOnly />
-      {/* <Typography component="legend">No rating given</Typography>
-      <Rating name="no-value" value={null} /> */}
-    </Box>
-          </Link>
+      {productState.products?.map((prod, index) => (
+        <SwiperSlide key={index} className=" rounded">
+          <ProductBrief name={prod.name} price={prod.price} discount={prod.discount} image={prod.image} Id={prod.Id} available={prod.available} activeCartId={activeCartId} setActiveCartId={setActiveCartId}/>
         </SwiperSlide>
       ))}
     </Swiper>

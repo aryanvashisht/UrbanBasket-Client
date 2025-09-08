@@ -10,8 +10,7 @@ import { FaXTwitter } from "react-icons/fa6";
 export default function Footer() {
     return (
         <div>
-
-            <div className="flex justify-center gap-20 my-7">
+            <div className="flex justify-center cursor-default gap-20 my-20">
                 <div className="text-center">
                     <div className="text-8xl flex justify-center mb-3"><CiDeliveryTruck /></div>
                     <p className="text-2xl my-2 font-bold">Free Shipping</p>
@@ -41,8 +40,8 @@ export default function Footer() {
             </div>
 
             {/* 3 blocks */}
-            <div className="flex justify-center space-x-35.5 text-lg">
-                <div>
+            <div className="flex justify-center space-x-35.5 my-15 text-lg">
+                <div className="space-y-9 cursor-pointer">
                     <h1 className="text-5xl mb-3 text-center text-purple-600">Contact Us</h1>
                     <p className="mb-5 mt-8">
                         Mega Super Store
@@ -57,9 +56,9 @@ export default function Footer() {
                     </p>
                 </div>
 
-                <div className="border border-gray-400"></div>
+                <div className="border border-gray-600"></div>
 
-                <div className="text-center">
+                <div className="text-center space-y-2 cursor-pointer">
                     <h1 className="text-5xl mb-3 text-purple-600">Products</h1>
                     <p>Prices drop</p>
                     <p>New products</p>
@@ -69,9 +68,9 @@ export default function Footer() {
                     <p>Stores</p>
                 </div>
 
-                <div className="border border-gray-400"></div>
+                <div className="border border-gray-600"></div>
 
-                <div className="text-center">
+                <div className="text-center space-y-3 cursor-pointer">
                     <h1 className="text-5xl mb-3 text-center text-purple-600">Our company</h1>
                     <p>Delivery</p>
                     <p>Legal Notice</p>

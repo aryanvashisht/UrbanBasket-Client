@@ -3,7 +3,7 @@ import FeaturedProducts from '../../FeaturedProducts/FeaturedProducts'
 import HomeCatSlider from '../../HomeCatSlider/HomeCatSlider'
 import HomeSlider from '../../HomeSlider/HomeSlider'
 import LatestProducts from '../../LatestProd/LatestProducts'
-import HomeNavigation from '../../HomeNavigation/HomeNavigation'
+import HomeNavigation from '../../Navigation/HomeNavigation/HomeNavigation'
 import ProductsSlider from '../../Products/ProductsSlider'
 import DiscountSlider from '../../DiscountSection/DiscountSlider'
 import TopPicksTemp from '../../Top-picks/TopPicksTemp'
@@ -16,7 +16,6 @@ function Home() {
       <br />
       <HomeNavigation/>
       <ProductsSlider/>
-      
       <FeaturedProducts/>
       <LatestProducts/>
       <div className='flex justify-between p-1 border-2 border-purple-400 shadow w-[80%] my-9 h-30 rounded-md mx-auto'>
@@ -29,6 +28,10 @@ function Home() {
       </div>
       <DiscountSlider/>
       <TopPicksTemp for="Milk"/>
+      <br />
+      <TopPicksTemp for="Watches"/>
+      <br />
+      <TopPicksTemp for="Electronics"/>
     </div>
   )
 }

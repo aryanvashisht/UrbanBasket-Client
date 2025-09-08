@@ -20,4 +20,13 @@ body{
     width: 90%;
 }
 
-.link:hover{color: rgb(1, 1, 13)}
+.icon-white {
+  color:oklch(0.827 0.119 306.383);
+  
+}
+
+.icon-white:hover {
+  color:  oklch(0.627 0.265 303.9);
+}
+
+.link:hover{color: oklch(0.627 0.265 303.9);}
