@@ -12,6 +12,10 @@ const ProductBrief = (props) => {
     props.setActiveCartId(Id);
   }
 
+  const handleCart = () => {
+    props.setActiveCartId(0);
+  }
+
   return (
     <div>
       <div
@@ -48,9 +52,9 @@ const ProductBrief = (props) => {
                  border-violet-400 focus:border-violet-600 
                  focus:ring-1 focus:ring-violet-600 outline-none"
             />
-            <button 
-            // onClick={handleCart}
-            className='cursor-pointer border px-2 rounded text-violet-600 my-1 font-semibold ml-2 text-4xl'><TiTick /></button>
+            <button
+              onClick={handleCart}
+              className='cursor-pointer border px-2 rounded text-violet-600 my-1 font-semibold ml-2 text-4xl'><TiTick /></button>
           </div> : <Button
             onClick={() => handleAddToCart(props.Id)}
             className='!border !mx-4 !mb-2'>

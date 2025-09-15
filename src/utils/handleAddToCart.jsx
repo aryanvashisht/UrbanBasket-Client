@@ -1,14 +1,12 @@
 import axios from "axios";
 
 export default async function handleAddToCart(productDetails) {
-    console.log({ productDetails });
-    console.log(`${import.meta.env.VITE_API_URL}/cart/AddToCart`);
 
 
-    const { _id, Quantity } = productDetails;
+    const { product, Quantity } = productDetails;
     try {
         const res = await axios.post(`${import.meta.env.VITE_API_URL}/cart/AddToCart`, {
-            _id,
+            product,
             Quantity
         }, {
             withCredentials: true

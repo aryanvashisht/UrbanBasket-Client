@@ -38,7 +38,9 @@ const ProductExpanded = () => {
   const handleCart = () => {
     console.log(product[0]._id);
 
-    handleAddToCart({ Quantity: cartQuant, _id: product[0]._id });
+    handleAddToCart({ Quantity: cartQuant, product: product[0]._id });
+    console.log(product[0]._id,"fojdnsfijdsnijfni");
+    
     
     setTimeout(() => {
       setCartActive(false)

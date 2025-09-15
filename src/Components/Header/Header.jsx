@@ -6,6 +6,7 @@ import { GrUserAdmin } from "react-icons/gr";
 import { FiShoppingCart } from 'react-icons/fi';
 import { IoGitCompareSharp } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
+import { TbTruckDelivery } from "react-icons/tb";
 import Tooltip from '@mui/material/Tooltip';
 import Navigation from '../Navigation';
 import Search from "../Search/Index";
@@ -117,13 +118,9 @@ function Header() {
               </li>
 
               <li>
-                <Link to={"/Wishlist"}>
-                  <Tooltip title="Wishlist">
-                    <IconButton aria-label="heart">
-                      <StyledBadge badgeContent={1} color="secondary">
-                        <FaRegHeart className="icon-white" />
-                      </StyledBadge>
-                    </IconButton>
+                <Link to={"/Orders"}>
+                  <Tooltip title="orders">
+                    <TbTruckDelivery className="text-3xl"/>
                   </Tooltip>
                 </Link>
               </li>

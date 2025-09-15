@@ -6,7 +6,7 @@ function Header() {
       <div className="flex items-center">
         <img
           className="w-30 ml-3"
-          src="/LogoForUrbanBasket.png" alt="Logo" srcset="" />
+          src="/LogoForUrbanBasket.png" alt="Logo" srcSet="" />
 
         <span>Admin Panel</span>
       </div>
